@@ -1,0 +1,46 @@
+{
+  "Routes": [
+    {
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamPathTemplate": "/api/products/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",     
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [], // array of strings
+        "EnableRateLimiting": true,
+        "Limit": 100,
+        "Period": "1m" // seconds, minutes, hours, days        
+      },
+      "QoSOptions": { //doğru çalıştırmadık
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 30000, // ms
+        "TimeoutValue": 30000 // ms
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6001
+        }
+      ]
+    },
+    {
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamPathTemplate": "/api/baskets/{everything}",
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6010
+        }
+      ]
+
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5001"
+  }
+}

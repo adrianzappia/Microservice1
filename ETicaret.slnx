@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Project Path="ETicaret.AppHost/ETicaret.AppHost.csproj" Id="4ae6ac2f-35d2-4144-85ba-3c61d58e503c" />
+  <Project Path="ETicaret.BasketWebAPI/ETicaret.BasketWebAPI.csproj" />
+  <Project Path="ETicaret.OcelotGateway/ETicaret.OcelotGateway.csproj" />
+  <Project Path="ETicaret.ProductWebAPI/ETicaret.ProductWebAPI.csproj" />
+  <Project Path="ETicaret.ServiceDefaults/ETicaret.ServiceDefaults.csproj" Id="fc1733d0-b081-4902-80fa-1161988e933b" />
+  <Project Path="ETicaret.YarpGateway/ETicaret.YarpGateway.csproj" Id="3ed751ab-4392-432f-8308-a1d2c9c389e6" />
+</Solution>

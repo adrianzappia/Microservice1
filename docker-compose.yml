@@ -1,0 +1,51 @@
+services:
+ consul:
+  image: hashicorp/consul:latest
+  ports:
+   - 8500:8500
+  container_name: consul-container
+
+ product:
+  build:
+   context: .
+   dockerfile: ETicaret.ProductWebAPI/Dockerfile
+  ports:
+   - 6001:8080
+  container_name: product-container
+  image: product-image
+
+ product2:
+  build:
+   context: .
+   dockerfile: ETicaret.ProductWebAPI/Dockerfile
+  ports:
+   - 6002:8080
+  container_name: product-container2
+  image: product-image
+
+ basket:
+  build:
+   context: .
+   dockerfile: ETicaret.BasketWebAPI/Dockerfile
+  ports:
+   - 6010:8080
+  container_name: basket-container
+  image: basket-image
+
+ ocelot:
+  build:
+   context: .
+   dockerfile: ETicaret.OcelotGateway/Dockerfile
+  ports:
+   - 5001:8080
+  container_name: ocelot-container
+  image: ocelot-image
+
+ yarp:
+  build:
+   context: .
+   dockerfile: ETicaret.YarpGateway/Dockerfile
+  ports:
+   - 5002:8080
+  container_name: yarp-container
+  image: yarp-image
