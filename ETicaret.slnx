@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="docker-compose.yml" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="ETicaret.AppHost/ETicaret.AppHost.csproj" Id="4ae6ac2f-35d2-4144-85ba-3c61d58e503c" />
   <Project Path="ETicaret.BasketWebAPI/ETicaret.BasketWebAPI.csproj" />
